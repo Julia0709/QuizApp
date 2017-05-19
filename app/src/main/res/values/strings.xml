@@ -5,6 +5,10 @@
     <string name="true_button">True</string>
     <string name="false_button">False</string>
 
+    <!-- Toast -->
+    <string name="correct_toast">Correct!</string>
+    <string name="incorrect_toast">Incorrect!</string>
+
     <!-- Questions -->
     <string name="q_start">Start Quiz!</string>
 </resources>
