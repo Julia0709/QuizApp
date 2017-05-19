@@ -11,5 +11,13 @@
     <string name="incorrect_toast">Incorrect!</string>
 
     <!-- Questions -->
-    <string name="q_start">Start Quiz!</string>
+    <string name="q_text">Questions here</string>
+
+    <string name="q_US">Is Donald Trump the president of USA?</string>
+    <string name="q_CA">Is Vancouver the capital city of Canada?</string>
+    <string name="q_JP">Is Tokyo the capital city of Japan?</string>
+    <string name="q_KR">Is Seoul the capital city of Korea?</string>
+    <string name="q_MX">Is Mexico city the capital city of Mexico?</string>
+    <string name="q_UK">Is London the capital city of the UK?</string>
+
 </resources>

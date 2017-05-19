@@ -8,11 +8,11 @@
     android:orientation="vertical">
 
 
-    <TextView android:id="@+id/text"
+    <TextView android:id="@+id/question_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="24dp"
-        android:text="@string/q_start"
+        android:text="@string/q_text"
         />
 
     <LinearLayout
