@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">QuizApp</string>
+
+    <!-- Button -->
+    <string name="true_button">True</string>
+    <string name="false_button">False</string>
+
+    <!-- Questions -->
+    <string name="q_start">Start Quiz!</string>
 </resources>
