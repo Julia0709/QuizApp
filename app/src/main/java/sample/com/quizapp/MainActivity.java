@@ -10,13 +10,15 @@ public class MainActivity extends AppCompatActivity {
     private Button mTrueButton;
     private Button mFalseButton;
 
+    private Button mNextButton;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Toast
+        // True Button
         mTrueButton = (Button) findViewById(R.id.true_button);
         mTrueButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -26,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // False Button
         mFalseButton = (Button) findViewById(R.id.false_button);
         mFalseButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -34,6 +37,12 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, R.string.incorrect_toast, Toast.LENGTH_SHORT).show();
             }
         });
+
+        // Next Button
+        mNextButton = (Button) findViewById(R.id.next_button);
+//        mNextButton.setOnClickListener(new View.OnClickListener(){
+//
+//        });
 
     }
 
