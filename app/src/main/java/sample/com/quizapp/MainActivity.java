@@ -12,6 +12,7 @@ public class MainActivity extends AppCompatActivity {
     private Button mFalseButton;
 
     private Button mNextButton;
+    private Button mPrevButton;
 
     private TextView mQuestionTextView;
 
@@ -62,9 +63,26 @@ public class MainActivity extends AppCompatActivity {
         mNextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // next button pressed!
-                mCurrentIndex = (mCurrentIndex + 1) % mQuestionBank.length;
-                updateQuestion();
+                // if it's not the 1st question
+                if(mCurrentIndex != (mQuestionBank.length-1)) {
+                    // next button pressed!
+                    mCurrentIndex = (mCurrentIndex + 1) % mQuestionBank.length;
+                    updateQuestion();
+                }
+            }
+        });
+
+        // Prev Button
+        mNextButton = (Button) findViewById(R.id.prev_button);
+        mNextButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // if it's not the 1st question
+                if(mCurrentIndex != 0) {
+                    // prev button pressed!
+                    mCurrentIndex = (mCurrentIndex - 1) % mQuestionBank.length;
+                    updateQuestion();
+                }
             }
         });
 
