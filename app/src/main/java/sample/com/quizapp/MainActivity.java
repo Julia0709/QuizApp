@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
     private ImageButton mNextButton;
     private ImageButton mPrevButton;
 
+    private TextView mQuestionNumber;
     private TextView mQuestionTextView;
 
     // Question object's array
@@ -39,7 +40,20 @@ public class MainActivity extends AppCompatActivity {
         // Connect view and model
         mQuestionTextView = (TextView) findViewById(R.id.question_text);
         updateQuestion();
+
         // Clickable text
+        mQuestionNumber.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                // if it's not the last question
+                if(mCurrentIndex != (mQuestionBank.length-1)) {
+                    // text pressed!
+                    mCurrentIndex = (mCurrentIndex + 1) % mQuestionBank.length;
+                    updateQuestion();
+                }
+            }
+        });
+
         mQuestionTextView.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
@@ -102,6 +116,10 @@ public class MainActivity extends AppCompatActivity {
 
     // change question text
     private void updateQuestion() {
+        // Question number
+        mQuestionNumber = (TextView) findViewById(R.id.question_number);
+        mQuestionNumber.setText("Question" + (mCurrentIndex + 1));
+
         int question = mQuestionBank[mCurrentIndex].getTextResId();
         mQuestionTextView.setText(question);
     }
