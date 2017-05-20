@@ -73,8 +73,8 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // Prev Button
-        mNextButton = (Button) findViewById(R.id.prev_button);
-        mNextButton.setOnClickListener(new View.OnClickListener() {
+        mPrevButton = (Button) findViewById(R.id.prev_button);
+        mPrevButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // if it's not the 1st question
