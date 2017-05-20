@@ -38,7 +38,18 @@ public class MainActivity extends AppCompatActivity {
         // Connect view and model
         mQuestionTextView = (TextView) findViewById(R.id.question_text);
         updateQuestion();
-
+        // Clickable text
+        mQuestionTextView.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                // if it's not the last question
+                if(mCurrentIndex != (mQuestionBank.length-1)) {
+                    // text pressed!
+                    mCurrentIndex = (mCurrentIndex + 1) % mQuestionBank.length;
+                    updateQuestion();
+                }
+            }
+        });
 
         // True Button
         mTrueButton = (Button) findViewById(R.id.true_button);
