@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
         mNextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // if it's not the 1st question
+                // if it's not the last question
                 if(mCurrentIndex != (mQuestionBank.length-1)) {
                     // next button pressed!
                     mCurrentIndex = (mCurrentIndex + 1) % mQuestionBank.length;
