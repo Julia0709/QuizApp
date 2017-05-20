@@ -18,8 +18,8 @@ public class MainActivity extends AppCompatActivity {
     private TextView mQuestionNumber;
     private TextView mQuestionTextView;
 
-    // Question object's array
-    private Question[] mQuestionBank = new Question[] {
+    // question object's array
+    private Question[] mQuestionBank = new Question[]{
             new Question(R.string.q_US, true),
             new Question(R.string.q_CA, false),
             new Question(R.string.q_JP, true),
@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
             new Question(R.string.q_UK, true)
     };
 
-    // Initialize
+    // initialize
     private int mCurrentIndex = 0;
 
 
@@ -37,36 +37,36 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Connect view and model
+        // connect view and model
         mQuestionTextView = (TextView) findViewById(R.id.question_text);
         updateQuestion();
 
-        // Clickable text
-        mQuestionNumber.setOnClickListener(new View.OnClickListener(){
+        // clickable text
+        mQuestionNumber.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // if it's not the last question
-                if(mCurrentIndex != (mQuestionBank.length-1)) {
-                    // text pressed!
+                if (mCurrentIndex != (mQuestionBank.length - 1)) {
+                    // text pressed
                     mCurrentIndex = (mCurrentIndex + 1) % mQuestionBank.length;
                     updateQuestion();
                 }
             }
         });
 
-        mQuestionTextView.setOnClickListener(new View.OnClickListener(){
+        mQuestionTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // if it's not the last question
-                if(mCurrentIndex != (mQuestionBank.length-1)) {
-                    // text pressed!
+                if (mCurrentIndex != (mQuestionBank.length - 1)) {
+                    // text pressed
                     mCurrentIndex = (mCurrentIndex + 1) % mQuestionBank.length;
                     updateQuestion();
                 }
             }
         });
 
-        // True Button
+        // true button
         mTrueButton = (Button) findViewById(R.id.true_button);
         mTrueButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // False Button
+        // false button
         mFalseButton = (Button) findViewById(R.id.false_button);
         mFalseButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,39 +84,38 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // Next Button
+        // next button
         mNextButton = (ImageButton) findViewById(R.id.next_button);
         mNextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // if it's not the last question
-                if(mCurrentIndex != (mQuestionBank.length-1)) {
-                    // next button pressed!
+                if (mCurrentIndex != (mQuestionBank.length - 1)) {
+                    // next button pressed
                     mCurrentIndex = (mCurrentIndex + 1) % mQuestionBank.length;
                     updateQuestion();
                 }
             }
         });
 
-        // Prev Button
+        // prev button
         mPrevButton = (ImageButton) findViewById(R.id.prev_button);
         mPrevButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // if it's not the 1st question
-                if(mCurrentIndex != 0) {
-                    // prev button pressed!
+                if (mCurrentIndex != 0) {
+                    // prev button pressed
                     mCurrentIndex = (mCurrentIndex - 1) % mQuestionBank.length;
                     updateQuestion();
                 }
             }
         });
-
     }
 
     // change question text
     private void updateQuestion() {
-        // Question number
+        // question number
         mQuestionNumber = (TextView) findViewById(R.id.question_number);
         mQuestionNumber.setText("Question" + (mCurrentIndex + 1));
 
